@@ -1,0 +1,100 @@
+.single-graph {
+  @include st-hide();
+  @include transition-duration-sm;
+  display: flex;
+  flex-direction: column;
+  z-index: $pt-z-index-overlay;
+  background: $st-graphs-bg-color;
+  color: $st-panel-color;
+  box-shadow: $st-panel-shadow;
+  border-radius: $pt-border-radius;
+  cursor: pointer;
+
+  &:not(.dialog-open):hover {
+    @include st-panel-hover();
+  }
+
+  &-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: $st-panel-header-height;
+    padding-left: $st-panel-gutter;
+    padding-right: ($st-panel-header-height - $pt-button-height) / 2;
+    font-size: $st-panel-header-font-size;
+    letter-spacing: $st-letter-spacing;
+    font-weight: $st-font-weight-medium;
+    color: $st-panel-header-color;
+    background: $st-panel-header-bg-color;
+    border-radius: $pt-border-radius $pt-border-radius 0 0;
+
+    .graph-name {
+      margin-right: 0.5em;
+    }
+    .graph-unit {
+      opacity: 0.75;
+    }
+    &-left {
+      padding: $pt-grid-size / 2 0;
+      flex-shrink: 1;
+    }
+    &-right {
+      display: flex;
+      flex-wrap: wrap-reverse;
+      justify-content: flex-end;
+      flex-shrink: 0;
+    }
+  }
+
+  &-fullscreen-operations {
+    display: none;
+  }
+
+  &-visualization {
+    flex: auto;
+    min-height: 250px;
+    position: relative;
+
+    .y-axis,
+    .component-group {
+      background-color: $st-graphs-bg-color;
+    }
+    .y-axis {
+      border-top: 1px solid $st-panel-border-color;
+    }
+
+    .plottable .axis text {
+      font-family: $pt-font-family;
+      font-size: $pt-font-size-small;
+      fill: $st-panel-header-color;
+    }
+  }
+
+  &.dialog-open {
+    .single-graph-fullscreen-operations {
+      display: flex;
+      .single-graph-operations {
+        margin: 0 $pt-grid-size;
+      }
+    }
+  }
+
+  .x-axis {
+    background: $st-graphs-bg-color;
+  }
+}
+.CPU{
+  .graph-line.pt-intent-success{
+    stroke: #f23d91;
+  }
+}
+.Memory{
+  .graph-line.pt-intent-success{
+    stroke: #14CCCC;
+  }
+}
+.Storage{
+  .graph-line.pt-intent-success{
+    stroke: #714fe0;
+  }
+}

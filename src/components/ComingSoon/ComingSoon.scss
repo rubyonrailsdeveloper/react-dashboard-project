@@ -1,0 +1,37 @@
+$coming-soon-path: '../../components/ComingSoon';
+.coming-soon {
+  // margin-top: $pt-grid-size * -6;
+  padding-bottom: 90%;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &-default {
+    background-image: url('#{$coming-soon-path}/coming_soon_train.jpg');
+  }
+  &-clusters {
+    background-image: url('#{$coming-soon-path}/coming_soon_relay.jpg');
+  }
+  &-nodes {
+    background-image: url('#{$coming-soon-path}/coming_soon_train.jpg');
+  }
+  &-containers {
+    background-image: url('#{$coming-soon-path}/coming_soon_runner.jpg');
+  }
+  &-users {
+    background-image: url('#{$coming-soon-path}/coming_soon_lego.jpg');
+    padding-bottom: 65%;
+  }
+
+  .coming-soon-text {
+    font-family: 'Nothing You Could Do', cursive;
+    font-weight: bold;
+    padding: 60px;
+    background: rgba(0,0,0,.3);
+    font-size: 40px;
+    position: fixed;
+    left: 300px;
+    top: 300px;
+  }
+}

@@ -1,0 +1,75 @@
+$st-stat-usage-graph-stroke-width: 7;
+
+.dashboard-stats {
+  .panel-body.has-children-layout,
+  .panel-footer.has-children-layout {
+    flex-direction: row;
+  }
+  .stat-usage {
+    &-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-bottom: $pt-grid-size;
+      flex: 3;
+    }
+    &-header {
+      font-size: $st-panel-header-font-size;
+      letter-spacing: $st-letter-spacing;
+      font-weight: $st-font-weight-medium;
+      color: $st-panel-header-color;
+      width: 100%;
+      text-transform: uppercase;
+    }
+    &-percentage {
+      font-size: $st-font-size-xl;
+      width: 100%;
+
+      &.pt-skeleton {
+        height: $st-font-size-xxl * $pt-line-height;
+        width: 4em;
+        margin-bottom: 0.1em;
+      }
+    }
+    &-ratio {
+      color: $st-panel-header-color;
+      width: 100%;
+
+      &.pt-skeleton {
+        height: $pt-font-size * $pt-line-height;
+        width: 10em;
+      }
+    }
+    &-chart {
+      max-width: $pt-grid-size * 10;
+      padding: $pt-grid-size 0;
+      flex: 2;
+      .pt-spinner-head,
+      .pt-spinner-track {
+        stroke-width: $st-stat-usage-graph-stroke-width;
+        stroke-linecap: butt;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+      }
+      .pt-spinner-track {
+        stroke: $st-plum-dark;
+      }
+      &:not([class*='pt-intent-']) .pt-spinner-head {
+        stroke: $st-white-25;
+      }
+    }
+    &-footer {
+      width: 100%;
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+      dd,
+      dt {
+        margin: 0;
+      }
+      dd {
+        color: $st-panel-header-color;
+      }
+    }
+  }
+}

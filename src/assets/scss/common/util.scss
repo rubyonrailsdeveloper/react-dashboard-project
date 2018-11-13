@@ -1,0 +1,114 @@
+@mixin st-line-color($property) {
+  // these classes are added on sliceStackDataSet()
+  &.orange {
+    #{$property}: #ff7100;
+  }
+  &.lime {
+    #{$property}: #bbde00;
+  }
+  &.purple {
+    #{$property}: #9179f2;
+  }
+  &.teal {
+    #{$property}: #00e28b;
+  }
+  &.rose {
+    #{$property}: #e800a0;
+  }
+  &.cyan {
+    #{$property}: #00e4e2;
+  }
+  &.pink {
+    #{$property}: #ffb0fc;
+  }
+  &.blue {
+    #{$property}: #0085d5;
+  }
+  &.gray {
+    #{$property}: #b3b3b3;
+  }
+  &.yellow {
+    #{$property}: #ffc150;
+  }
+}
+
+@mixin st-hide-text() {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@mixin st-hide() {
+  &.hide {
+    display: none;
+  }
+}
+
+@mixin st-placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+@mixin st-flex-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin st-flexcenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin st-center {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin st-breakpoint($size) {
+  @if $size == xsmall-landscape {
+    @media screen and (max-width: 37.5em) and (orientation: landscape),
+      screen and (max-height: 20em) and (orientation: landscape) {
+      @content;
+    }
+  } @else if $size == xsmall {
+    @media screen and (max-height: 20em) and (orientation: portrait),
+      screen and (max-height: 40em) and (orientation: portrait) {
+      @content;
+    }
+  } @else if $size == small {
+    @media screen and (max-width: 39.938em) {
+      @content;
+    }
+  } @else if $size == small-landscape {
+    @media screen and (max-width: 46em) and (max-height: 25.875em) and (orientation: landscape) {
+      @content;
+    }
+  } @else if $size == medium {
+    @media screen and (max-width: 63.9375em) {
+      @content;
+    }
+  } @else if $size == large {
+    @media screen and (max-width: 90em) {
+      @content;
+    }
+  } @else if $size == xlarge {
+    @media screen and (min-width: 100.063em) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint not supported";
+  }
+}

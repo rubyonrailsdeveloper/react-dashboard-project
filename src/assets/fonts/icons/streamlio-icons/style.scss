@@ -1,0 +1,105 @@
+@import "variables";
+
+@font-face {
+  font-family: 'streamlio-icons';
+  src: url('#{$icomoon-font-path}/streamlio-icons.woff?fwgh2') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.st-icon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'streamlio-icons' !important;
+  // speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  font-size: $st-font-size-xl !important;
+  color: $st-gray;
+
+  /* helper classes */
+  &.st-icon-dark {
+    color: $st-plum-darkest;
+  }
+
+  &-xs {
+    font-size: $pt-font-size !important;
+  }
+  &-sm {
+    font-size: $pt-font-size-large !important;
+  }
+  &-lg {
+    font-size: $st-font-size-xxl !important;
+  }
+  &-xl {
+    font-size: $st-font-size-xxxl !important;
+  }
+
+  /* combination helper classes */
+  &.st-icon-checkmark, &.st-icon-topic, &.st-icon-pipeline {
+    &.pt-intent-success {
+      color: $st-plum-darker;
+    }
+    &.pt-intent-success:before {
+      background-color: $st-green-muted;
+      border-radius: 2px;
+    }
+    &:hover {
+      &.pt-intent-success:before {
+        background-color: $st-green-muted-hover;
+      }
+    }
+  }
+
+  &.st-icon-sadface, &.st-icon-angryface, &.st-icon-failure {
+    &.pt-intent-warning {
+      color: $st-intent-warning;
+    }
+    &.pt-intent-danger {
+      color: $st-intent-danger;
+    }
+  }
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@function unicode($str) {
+  @return unquote("\"") + $str + unquote("\"");
+}
+
+/*+++ Begin: icon classes (This part will be updated everytime we get a new icon set) +++*/
+.st-icon-angryface {
+  &:before {
+    content: unicode($st-icon-angryface); 
+  }
+}
+.st-icon-checkmark {
+  &:before {
+    content: unicode($st-icon-checkmark); 
+  }
+}
+.st-icon-failure {
+  &:before {
+    content: unicode($st-icon-failure); 
+  }
+}
+.st-icon-pipeline {
+  &:before {
+    content: unicode($st-icon-pipeline); 
+  }
+}
+.st-icon-sadface {
+  &:before {
+    content: unicode($st-icon-sadface); 
+  }
+}
+.st-icon-topic {
+  &:before {
+    content: unicode($st-icon-topic); 
+  }
+}
+/*--- End: icon classes ---*/

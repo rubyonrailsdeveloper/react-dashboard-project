@@ -1,0 +1,42 @@
+$st-tag-border-radius: $pt-grid-size;
+$st-tag-bg-color: $st-plum-dark;
+$st-tag-shadow: $st-panel-shadow;
+
+.pt-tag {
+  padding: 2px 8px;
+  border-radius: $st-tag-border-radius;
+  font-weight: $st-font-weight-medium;
+  font-size: $pt-font-size;
+
+  &.pt-intent-primary,
+  &.pt-intent-success,
+  &.pt-intent-warning,
+  &.pt-intent-danger {
+    color: $st-white;
+  }
+  &.pt-intent-primary {
+    background-color: $st-intent-primary-dark;
+  }
+  &.pt-intent-success {
+    background-color: $st-intent-success-dark;
+  }
+  &.pt-intent-warning {
+    background-color: $st-intent-warning-dark;
+  }
+  &.pt-intent-danger {
+    background-color: $st-intent-danger-dark;
+  }
+
+  .pt-icon-standard {
+    margin-right: $pt-grid-size / 2;
+  }
+}
+.pt-dark {
+  .pt-tag {
+    box-shadow: $st-tag-shadow;
+  }
+  .pt-tag:not([class*='pt-intent-']) {
+    color: $st-white;
+    background-color: $st-tag-bg-color;
+  }
+}

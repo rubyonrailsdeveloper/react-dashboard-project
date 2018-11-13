@@ -1,0 +1,86 @@
+@mixin input-shadow($color) {
+  box-shadow: inset 0 -1px 0 0 $color;
+}
+@mixin input-shadow-focus($color) {
+  box-shadow: inset 0 -2px 0 0 $color;
+}
+@mixin input-shadow-intent($color) {
+  box-shadow: inset 0 -2px 0 0 $color;
+}
+
+.pt-input {
+  border-radius: 0;
+  // &[type='search'] {
+  //   border-radius: $pt-border-radius;
+  // }
+  height: 32px;
+  line-height: 32px;
+  padding: 0 24px 0 8px;
+}
+
+.pt-dark {
+  .pt-input {
+    @include input-shadow($st-plum-bright);
+    background-color: transparent;
+    color: $st-gray;
+
+    &::-webkit-input-placeholder {
+      color: $st-plum;
+    }
+    &::-moz-placeholder {
+      color: $st-plum;
+    }
+    &::-ms-input-placeholder {
+      color: $st-plum;
+    }
+    &:hover {
+      @include input-shadow($st-gray-darker);
+    }
+    &:focus {
+      @include input-shadow-focus($st-blue);
+    }
+    &:disabled,
+    &.pt-disabled {
+      @include input-shadow($st-plum-dark);
+      background-color: transparent;
+      color: $st-gray-darker;
+      opacity: 1;
+    }
+    &.pt-intent-primary {
+      @include input-shadow-intent($st-blue);
+      &:hover {
+        @include input-shadow($st-blue);
+      }
+      &:focus {
+        @include input-shadow-focus($st-blue);
+      }
+    }
+    &.pt-intent-success {
+      @include input-shadow-intent($st-green);
+      &:hover {
+        @include input-shadow($st-green);
+      }
+      &:focus {
+        @include input-shadow-focus($st-green);
+      }
+    }
+    &.pt-intent-warning {
+      @include input-shadow-intent($st-yellow);
+      &:hover {
+        @include input-shadow($st-yellow);
+      }
+      &:focus {
+        @include input-shadow-focus($st-yellow);
+      }
+    }
+    &.pt-intent-danger {
+      @include input-shadow-intent($st-red);
+      &:hover {
+        @include input-shadow($st-red);
+      }
+      &:focus {
+        @include input-shadow-focus($st-red);
+      }
+    }
+  }
+}

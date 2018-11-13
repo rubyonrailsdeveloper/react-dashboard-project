@@ -1,0 +1,26 @@
+.st-schema-dialog {
+  width: 60%;
+  background-color: $st-panel-header-bg-color;
+  align-self: normal;
+
+  .pt-dialog-header {
+    background-color: $st-panel-header-bg-color;
+    // border-bottom: 1px solid #000;
+    box-shadow: 0px 1px 0px 0px rgba(0,0,0,.6);
+    font-family: $pt-font-family-slab;
+    h5 {
+      color: $st-panel-color;
+    }
+
+    .pt-dialog-close-button {
+      color: $st-white-50;
+      &:hover {
+        color: $st-white-75;
+      }
+    }
+  }
+
+  .pt-dialog-body {
+    min-height: 500px;
+  }
+}

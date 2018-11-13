@@ -1,0 +1,18 @@
+.dashboard {
+  .action-bar-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .pt-popover-target {
+      margin-left: $pt-grid-size;
+    }
+
+    .pt-button {
+      min-width: 151px;
+    }
+  }
+}
+
+.pt-menu.dashboard-timerange-menu {
+  min-width: 151px;
+}

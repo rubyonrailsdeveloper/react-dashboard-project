@@ -1,0 +1,18 @@
+$st-pager-shadow: $st-panel-shadow;
+$st-pager-bg-color: $st-plum-darker;
+
+.pager {
+  background-color: $st-pager-bg-color;
+  height: $pt-grid-size * 4;
+  padding-right: $pt-grid-size * 0.5;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: flex-end;
+  border-radius: 0 0 $pt-border-radius $pt-border-radius;
+  box-shadow: $st-pager-shadow;
+}
+
+.pager-total {
+  padding: 0 $pt-grid-size;
+}

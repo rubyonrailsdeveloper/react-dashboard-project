@@ -1,0 +1,16 @@
+body {
+  text-rendering: geometricPrecision;
+
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -o-font-smoothing: antialiased;
+}
+
+input,
+textarea,
+select,
+button {
+  font: $st-font-weight-regular $pt-font-size $pt-font-family;
+}

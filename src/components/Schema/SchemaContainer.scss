@@ -1,0 +1,23 @@
+.st-schema-container {
+  .pt-tab {
+    color: $st-panel-color;
+    font-weight: 100;
+  }
+
+  // .pt-tab[aria-selected="true"] {
+  //   color: $st-blue;
+  // }
+
+  .st-schema-actions {
+    color: $st-blue;
+    .pt-button {
+      background: none;
+      &::before {
+        color: $st-blue;
+      }
+    }
+    .pt-button:hover {
+      background-color: $st-almost-black;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.st-info-tooltip {
+  &.pt-tooltip .pt-popover-content {
+    padding: 0;
+    overflow: hidden;
+    max-width: $pt-grid-size * 20;
+  }
+  &-title,
+  &-body {
+    padding: $pt-grid-size / 2 $pt-grid-size;
+  }
+  &-title {
+    background-color: $st-gray-bright;
+    font-weight: $st-font-weight-bold;
+    border-bottom: 1px solid $st-gray;
+  }
+}

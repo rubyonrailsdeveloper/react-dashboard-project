@@ -1,0 +1,40 @@
+$st-checkbox-shadow: 0 0 0 1px $st-plum, inset -2px 2px 4px 0 rgba($st-black, 0.2);
+
+.pt-dark {
+  .pt-control {
+    color: $st-white;
+
+    .pt-control-indicator {
+      background-image: none;
+      background-color: $st-plum-bright;
+      width: 15px;
+      height: 15px;
+    }
+    &:hover .pt-control-indicator {
+      background-color: darken($st-plum-bright, 10%);
+    }
+    input:not(:disabled):active ~ .pt-control-indicator {
+      background-color: darken($st-plum-bright, 20%);
+      box-shadow: $st-checkbox-shadow;
+    }
+
+    input:checked ~ .pt-control-indicator,
+    input:indeterminate ~ .pt-control-indicator {
+      background-color: $st-blue;
+      box-shadow: $st-checkbox-shadow;
+    }
+    &:hover input:checked ~ .pt-control-indicator,
+    &:hover input:indeterminate ~ .pt-control-indicator {
+      background-color: $st-blue-dark;
+    }
+    input:not(:disabled):active:checked ~ .pt-control-indicator,
+    input:not(:disabled):active:indeterminate ~ .pt-control-indicator {
+      background-color: $st-blue-darker;
+      box-shadow: $st-checkbox-shadow;
+    }
+
+    &.pt-disabled {
+      color: rgba($st-white, 0.5);
+    }
+  }
+}

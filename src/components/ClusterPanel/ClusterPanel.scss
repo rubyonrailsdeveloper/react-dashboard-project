@@ -1,0 +1,9 @@
+.cluster-panel {
+  .pt-menu {
+    @include st-panel-wide-area();
+
+    .pt-menu-item {
+      margin-bottom: $pt-grid-size / 2;
+    }
+  }
+}

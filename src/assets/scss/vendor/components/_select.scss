@@ -1,0 +1,53 @@
+@mixin select-shadow-intent($color) {
+  box-shadow: 0 0 0 1px rgba($color, 1);
+}
+
+.pt-select {
+  &::after {
+    font-size: $pt-font-size;
+  }
+}
+
+.pt-dark {
+  .pt-select {
+    select {
+      background-color: $st-dark-button-background;
+      background-image: $st-dark-button-gradient;
+      color: $st-white;
+      &:hover {
+        background-color: $st-dark-button-background-hover;
+      }
+      &:active {
+        background-color: $st-dark-button-background-active;
+        background-image: none;
+      }
+    }
+    &::after {
+      color: $st-white;
+    }
+    &.pt-disabled select,
+    select:disabled {
+      background-color: $st-dark-button-background;
+      color: $st-white;
+      opacity: 0.6;
+    }
+    &.pt-minimal {
+      select {
+        background: none;
+        color: $st-white;
+        &:hover {
+          background: rgba($st-gray, 0.25);
+        }
+        &:active {
+          background: rgba($st-gray, 0.3);
+        }
+      }
+      &.pt-disabled select {
+        color: rgba($st-white, 0.5);
+      }
+    }
+    &.pt-intent-danger select {
+      @include select-shadow-intent($st-intent-danger);
+    }
+  }
+}

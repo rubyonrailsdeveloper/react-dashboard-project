@@ -1,0 +1,25 @@
+.pt-tab {
+  font-size: $pt-font-size;
+  letter-spacing: $st-letter-spacing;
+  font-weight: $st-font-weight-medium;
+}
+
+.pt-tab-indicator-wrapper .pt-tab-indicator {
+  height: 2px;
+}
+
+.pt-dark {
+  .pt-tab {
+    color: $st-tab-color;
+
+    &[aria-selected='true'] {
+      color: $st-tab-active-color;
+    }
+    &:not([aria-disabled='true']):hover {
+      color: $st-tab-active-color;
+    }
+  }
+  .pt-tab-indicator {
+    background-color: $st-tab-active-color;
+  }
+}

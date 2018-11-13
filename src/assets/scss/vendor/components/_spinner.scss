@@ -1,0 +1,27 @@
+.pt-spinner {
+  &.pt-intent-primary .pt-spinner-head {
+    stroke: $st-intent-primary;
+  }
+  &.pt-intent-success .pt-spinner-head {
+    stroke: $st-intent-success;
+  }
+  &.pt-intent-warning .pt-spinner-head {
+    stroke: $st-intent-warning;
+  }
+  &.pt-intent-danger .pt-spinner-head {
+    stroke: $st-intent-danger;
+  }
+}
+
+.pt-dark {
+  .pt-spinner {
+    .pt-spinner-track {
+      stroke: rgba($st-white, 0.25);
+    }
+    &:not([class*='pt-intent-']) {
+      .pt-spinner-head {
+        stroke: rgba($st-white, 1);
+      }
+    }
+  }
+}

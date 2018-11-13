@@ -1,0 +1,26 @@
+$st-toast-color: $st-white;
+
+@keyframes pulsate-spinner-text {
+  0% {
+    color: rgba($st-toast-color, 1);
+  }
+  50% {
+    color: rgba($st-toast-color, 0.5);
+  }
+  100% {
+    color: rgba($st-toast-color, 1);
+  }
+}
+
+.spinner-toast {
+  display: flex;
+  align-items: center;
+  &-spinner {
+    margin: -3px 0;
+  }
+  &-text {
+    margin-left: $pt-grid-size;
+    animation: pulsate-spinner-text 2s ease-in-out;
+    animation-iteration-count: infinite;
+  }
+}

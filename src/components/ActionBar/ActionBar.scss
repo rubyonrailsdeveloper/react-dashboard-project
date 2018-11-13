@@ -1,0 +1,124 @@
+$st-filter-bg-color: $st-intent-primary;
+
+.pt-navbar.action-bar {
+  flex: none;
+  padding-left: 0;
+  padding-right: 0;
+  height: $st-action-bar-height;
+  display: flex;
+  flex-direction: column;
+  background-color: $st-page-bg-color;
+  font-size: $pt-font-size;
+  overflow: hidden;
+  box-shadow: none;
+
+  @supports (position: sticky) {
+    position: sticky;
+    top: $st-action-bar-top;
+  }
+}
+
+.action-bar-wrap {
+  @include st-container();
+  flex: auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.action-bar-background {
+  flex: auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  @include transition-duration-lg();
+
+  &.is-paused {
+    background: rgba($st-yellow, 0.1);
+  }
+}
+
+.action-bar-actions {
+  .pt-button + div,
+  .pt-popover-target + div,
+  .pt-tag + .pt-popover-target,
+  .pt-popover-target + .pt-popover-target {
+    margin-left: $pt-grid-size/2;
+  }
+  div {
+    display: inline-block;
+  }
+}
+
+.filter-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+
+  &-wrap {
+    @include transition-duration-sm();
+    opacity: 0;
+
+    &::after {
+      @include transition-duration-lg();
+      content: '';
+      display: block;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 4px;
+      background-color: $st-filter-bg-color;
+      transform: scaleX(0);
+    }
+
+    &.is-entering {
+      opacity: 0;
+      &::after {
+        transform: scaleX(0);
+      }
+      .filter-bar-filter {
+        transform: translate(-50%, -100%);
+      }
+    }
+    &.is-entered {
+      opacity: 1;
+      &::after {
+        transform: scaleX(1);
+      }
+      .filter-bar-filter {
+        transform: translate(-50%, 0);
+      }
+    }
+    &.is-exiting {
+      @include transition-duration-md();
+      opacity: 0;
+      &::after {
+        transform: scaleX(0);
+      }
+      .filter-bar-filter {
+        transform: translate(-50%, -100%);
+      }
+    }
+  }
+
+  &-filter {
+    @include transition-duration-lg();
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    background-color: $st-filter-bg-color;
+    padding-left: $pt-grid-size;
+    padding-top: 4px;
+    font-size: $pt-font-size;
+    border-radius: 0 0 $pt-border-radius $pt-border-radius;
+  }
+
+  &-name {
+    font-weight: $st-font-weight-bold;
+  }
+}

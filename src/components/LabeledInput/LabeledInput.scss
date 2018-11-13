@@ -1,0 +1,44 @@
+.labeled-input.pt-inline.pt-form-group {
+  margin-bottom: 0;
+  align-items: flex-start;
+
+  + .labeled-input {
+    margin-left: $pt-grid-size * 1.5;
+  }
+
+  .st-button-label {
+    margin: 0 1px 0 0;
+    background-color: rgba($st-dark-button-background, 0.5);
+    color: $st-white;
+    border: none;
+    padding: 0 10px;
+    vertical-align: middle;
+    font-size: $pt-font-size;
+    min-width: $pt-grid-size * 3;
+    min-height: $pt-grid-size * 3;
+    line-height: $pt-grid-size * 3;
+    border-radius: $pt-border-radius;
+    box-shadow: $dark-button-box-shadow;
+    flex-shrink: 0;
+
+    &.pt-minimal {
+      background: none;
+      color: inherit;
+      box-shadow: none;
+    }
+
+    &:first-child {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    &:last-child {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+
+  .pt-form-content:not(:first-child) .pt-select select {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}

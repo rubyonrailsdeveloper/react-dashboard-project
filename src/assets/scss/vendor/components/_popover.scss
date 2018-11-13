@@ -1,0 +1,14 @@
+$st-popover-shadow-dark: 0 8px 24px 0 rgba($st-black, 0.4);
+$st-popover-bg-color: $st-plum-dark;
+
+.pt-dark .pt-popover:not(.pt-tooltip),
+.pt-popover.pt-dark:not(.pt-tooltip) {
+  box-shadow: $st-popover-shadow-dark;
+
+  .pt-popover-content {
+    background: $st-popover-bg-color;
+  }
+  .pt-popover-arrow-fill {
+    fill: $st-plum-dark;
+  }
+}

@@ -1,0 +1,8 @@
+.pipeline-entity-explorer {
+  @include xy-grid;
+  @include xy-grid-layout(2, '.panel');
+  justify-content: center;
+  @include st-container();
+  padding-left: 0;
+  width: 100%;
+}

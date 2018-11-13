@@ -1,0 +1,171 @@
+//General button styles
+.pt-button {
+  &.pt-intent-primary,
+  &.pt-intent-success,
+  &.pt-intent-warning,
+  &.pt-intent-danger {
+    background-image: $st-button-intent-gradient;
+    color: $st-white;
+
+    &.pt-disabled {
+      color: rgba($st-white, 0.5);
+    }
+  }
+
+  &.pt-intent-primary {
+    background-color: $st-intent-primary;
+    &:hover {
+      background-color: $st-teal-dark;
+    }
+    &:active {
+      background-color: $st-teal-darker;
+    }
+    &.pt-disabled {
+      background-color: rgba($st-teal, 0.5);
+    }
+  }
+  &.pt-intent-success {
+    background-color: $st-green;
+    &:hover {
+      background-color: $st-green-dark;
+    }
+    &:active {
+      background-color: $st-green-darker;
+    }
+    &.pt-disabled {
+      background-color: rgba($st-green, 0.5);
+    }
+  }
+  &.pt-intent-warning {
+    background-color: $st-yellow;
+
+    &:hover {
+      background-color: $st-yellow-dark;
+    }
+    &:active {
+      background-color: $st-yellow-darker;
+    }
+    &.pt-disabled {
+      background-color: rgba($st-yellow, 0.5);
+    }
+  }
+  &.pt-intent-danger {
+    background-color: $st-red;
+
+    &:hover {
+      background-color: $st-red-dark;
+    }
+    &:active {
+      background-color: $st-red-darker;
+    }
+    &.pt-disabled {
+      background-color: rgba($st-red, 0.5);
+    }
+  }
+  &[class*='pt-icon-']::before,
+  .pt-icon-standard,
+  .pt-icon-large {
+    font-size: $pt-font-size;
+  }
+}
+
+//Dark theme specific button styles
+.pt-dark {
+  .pt-button {
+    &:not([class*='pt-intent-']) {
+      background-color: $st-dark-button-background;
+      background-image: $st-dark-button-gradient;
+      color: $st-white;
+      &:hover {
+        background-color: $st-dark-button-background-hover;
+      }
+      &:active {
+        background-color: $st-dark-button-background-active;
+        background-image: none;
+      }
+      &.pt-disabled {
+        background-color: rgba($st-dark-button-background, 0.5);
+        color: rgba($st-white, 0.5);
+      }
+      &.pt-active {
+        background: $st-dark-button-background-active;
+      }
+      &[class*='pt-icon-']::before,
+      .pt-icon-standard,
+      .pt-icon-large {
+        color: $st-white;
+      }
+    }
+
+    &.pt-minimal {
+      background: none;
+      color: inherit;
+      &:hover {
+        background: rgba($st-gray, 0.25);
+      }
+      &:active {
+        background: rgba($st-gray, 0.3);
+      }
+      &.pt-disabled {
+        background: none;
+        color: rgba($st-white, 0.5);
+      }
+      &.pt-active {
+        background: $st-intent-primary;
+
+        &:hover {
+          background: $st-teal-dark;
+        }
+      }
+
+      &.pt-intent-primary {
+        color: $st-intent-primary;
+        &:hover {
+          background: rgba($st-intent-primary, 0.2);
+        }
+        &:active {
+          background: rgba($st-intent-primary, 0.3);
+        }
+        &.pt-disabled {
+          color: rgba($st-intent-primary, 0.5);
+        }
+      }
+      &.pt-intent-success {
+        color: $st-green;
+        &:hover {
+          background: rgba($st-green, 0.2);
+        }
+        &:active {
+          background: rgba($st-green, 0.3);
+        }
+        &.pt-disabled {
+          color: rgba($st-green, 0.5);
+        }
+      }
+      &.pt-intent-warning {
+        color: $st-yellow;
+        &:hover {
+          background: rgba($st-yellow, 0.2);
+        }
+        &:active {
+          background: rgba($st-yellow, 0.3);
+        }
+        &.pt-disabled {
+          color: rgba($st-yellow, 0.5);
+        }
+      }
+      &.pt-intent-danger {
+        color: $st-red;
+        &:hover {
+          background: rgba($st-red, 0.2);
+        }
+        &:active {
+          background: rgba($st-red, 0.3);
+        }
+        &.pt-disabled {
+          color: rgba($st-red, 0.5);
+        }
+      }
+    }
+  }
+}

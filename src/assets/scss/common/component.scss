@@ -1,0 +1,24 @@
+@mixin st-panel-wide-area() {
+  margin-left: -$st-panel-gutter;
+  margin-right: -$st-panel-gutter;
+}
+@mixin st-panel-hover() {
+  box-shadow: $st-panel-shadow-hover;
+}
+
+@mixin st-intent($property) {
+  #{$property}: $st-gray-darker;
+
+  &.pt-intent-success {
+    #{$property}: $st-intent-success;
+  }
+  &.pt-intent-warning {
+    #{$property}: $st-intent-warning;
+  }
+  &.pt-intent-danger {
+    #{$property}: $st-intent-danger;
+  }
+  &.intent-unknown {
+    #{$property}: $st-intent-unknown;
+  }
+}

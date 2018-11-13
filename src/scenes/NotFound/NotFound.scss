@@ -1,0 +1,32 @@
+.not-found {
+  @include st-v-box();
+  align-items: center;
+  justify-content: space-around;
+  &-text {
+    align-items: center;
+    text-align: center;
+    margin-top: $pt-grid-size * -20;
+    h1,
+    p {
+      font-size: $pt-font-size-large;
+      letter-spacing: $st-letter-spacing;
+    }
+    h1 {
+      color: $st-white;
+      margin-bottom: $pt-grid-size * 2;
+    }
+    p {
+      color: $st-white-50;
+      margin-bottom: $pt-grid-size * 1.5;
+    }
+  }
+
+  &-img {
+    margin-top: $pt-grid-size * -6;
+    $width: 75%;
+    padding-bottom: $width / 2;
+    width: $width;
+    background-image: url('#{$st-images-path}/404.png');
+    background-size: contain;
+  }
+}

@@ -1,0 +1,347 @@
+@import '~@blueprintjs/core/src/common/colors';
+@import '~@blueprintjs/core/src/common/mixins';
+
+$st-images-path: '../images';
+
+// Streamlio: Override blueprint's font location
+// see https://github.com/palantir/blueprint/issues/123
+$icon-font-path: '~@blueprintjs/core/resources/icons';
+$icon-font-formats: woff; // only need woff on Chrome & FF
+
+// This line can be removed when we upgrade to Bourbon 5.0
+$output-bourbon-deprecation-warnings: false;
+
+// Grid
+$pt-grid-size: 10px !default;
+$half-grid-size: $pt-grid-size / 2 !default;
+$st-grid-gutter: $pt-grid-size * 2.8;
+$st-grid-v-gutter: $pt-grid-size * 2;
+$st-container-min-width: 960px;
+$st-container-max-width: 1440px;
+
+// see https://bitsofco.de/the-new-system-font-stack/
+// $pt-font-family: -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+//   'Cantarell', 'Open Sans', 'Helvetica Neue', 'Icons16', sans-serif !default;
+
+$pt-font-family: 'Roboto', sans-serif;
+$pt-font-family-slab: 'Roboto Slab', sans-serif;
+$pt-font-family-monospace: monospace !default;
+$pt-font-size: $pt-grid-size * 1.5;
+$pt-font-size-large: $pt-grid-size * 1.9;
+$pt-font-size-small: $pt-grid-size * 1.3;
+
+$st-font-size-xl: $pt-grid-size * 2.4;
+$st-font-size-xxl: $pt-grid-size * 3.1;
+$st-font-size-xxxl: $pt-grid-size * 3.9;
+
+
+// a little bit extra to ensure the height comes out to just over 18px (and browser rounds to 18px)
+$pt-line-height: ($pt-grid-size * 2.25) / $pt-font-size + 0.0001 !default;
+
+// Letter spacing
+$st-letter-spacing: 0.03em;
+
+// Font weights
+$st-font-weight-light: 100;
+$st-font-weight-regular: 400;
+$st-font-weight-medium: 500;
+$st-font-weight-bold: 700;
+
+// Icon variables
+$icons16-family: 'Icons16' !default;
+$icons20-family: 'Icons20' !default;
+$pt-icon-size-standard: 16px !default;
+$pt-icon-size-large: 20px !default;
+
+// Streamlio Icons
+$st-icon-expand-all: '';
+$st-icon-chevron-up: '';
+$st-icon-chevron-down: '';
+$st-icon-chevron-right: '';
+
+// Grids & dimensions
+$pt-border-radius: 2px;
+
+// Streamlio Colors
+$st-black: #000000;
+$st-white: #ffffff;
+$st-white-75: rgba($st-white, 0.75);
+$st-white-50: rgba($st-white, 0.5);
+$st-white-33: rgba($st-white, 0.33);
+$st-white-25: rgba($st-white, 0.25);
+
+$st-almost-black: #09090a;
+$st-plum-darkest: #1b1b1f;
+$st-plum-darker: #242429;
+$st-plum-dark: #3c3c42;
+$st-plum: #525259;
+$st-plum-bright: #6b6b73;
+$st-gray-darker: #8e8e99;
+$st-gray-dark: #c4c4cc;
+$st-gray: #dfdfe5;
+$st-gray-bright: #f2f2f5;
+
+$st-blue: #56c1d6;
+$st-blue-dark: #0084b2;
+$st-blue-darker: #054258;
+$st-blue-bright: #84d4eb;
+
+$st-green: #40b85e;
+$st-green-dark: #28a146;
+$st-green-darker: #238c3d;
+$st-green-bright: #5ed17b;
+
+$st-green-muted: #576657; // TODO: these are for charts and health
+$st-green-muted-hover: #567356; // TODO: these are for charts and health
+
+$st-teal: #00b5d5;
+$st-teal-dark: #0790a8;
+$st-teal-darker: #08768a;
+$st-teal-bright: #09d8eb;
+
+$st-yellow: #ffd073; // #ffdc7a;
+$st-yellow-dark: #eba40b;
+$st-yellow-darker: #dd9000;
+$st-yellow-bright: #ffd43b;
+
+$st-red: #f23d4c;
+$st-red-dark: #e61e3f;
+$st-red-darker: #cc1b38;
+$st-red-bright: #f76881;
+
+$st-purple: #9179f2;
+$st-purple-dark: #7157d9;
+$st-purple-darker: #634dbf;
+$st-purple-bright: #ad99ff;
+
+// $st-brown: #191921;
+// $st-brown-dark: #111017;
+
+$st-intent-primary: $st-blue;
+$st-intent-success: $st-green;
+$st-intent-warning: $st-yellow;
+$st-intent-danger: $st-red;
+$st-intent-unknown: $st-white-33;
+
+$st-intent-primary-dark: $st-teal-dark;
+$st-intent-success-dark: $st-green-dark;
+$st-intent-warning-dark: $st-yellow-dark;
+$st-intent-danger-dark: $st-red-dark;
+
+$st-intent-primary-darker: $st-teal-darker;
+$st-intent-success-darker: $st-green-darker;
+$st-intent-warning-darker: $st-yellow-darker;
+$st-intent-danger-darker: $st-red-darker;
+
+// Panels
+$st-panel-gutter: $pt-grid-size * 1.5;
+$st-panel-component-gutter: 1px;
+$st-panel-color: $st-gray;
+$st-panel-header-height: $pt-grid-size * 4;
+$st-panel-header-bg-color: $st-plum-darker;
+$st-panel-header-color: $st-gray-darker;
+$st-panel-header-font-size: $pt-font-size-small;
+$st-panel-body-v-gutter: $pt-grid-size * 1;
+$st-panel-body-bg-color: $st-plum-darkest;
+$st-panel-footer-height: $pt-grid-size * 3.5;
+$st-panel-footer-bg-color: $st-plum-darkest;
+$st-panel-shadow: 0 0 0 1px rgba($st-black, 0.2), 0 0 0 rgba($st-black, 0),
+  0 1px 1px rgba($st-black, 0.4);
+$st-panel-shadow-hover: 0 0 0 1px rgba($st-black, 1), 0 2px 4px rgba($st-black, 0.4),
+  0 8px 24px rgba($st-black, 0.4);
+$st-panel-border-color: $st-plum-darker;
+
+// Graphs Panel
+$st-graphs-bg-color: $st-plum-darkest;
+
+// Page Heading
+$st-page-header: $st-font-size-xxl;
+$st-page-header-color: $st-gray-dark;
+$st-page-bg-color: $st-almost-black;
+
+// Buttons
+$pt-button-height: $pt-grid-size * 3 !default;
+$pt-button-height-small: $pt-grid-size * 2.4 !default;
+$pt-button-height-large: $pt-grid-size * 4 !default;
+$st-button-intent-gradient: linear-gradient(to bottom, rgba($st-white, 0), rgba($st-black, 0.25));
+$st-dark-button-gradient: linear-gradient(
+  to bottom,
+  rgba($st-white, 0.125),
+  rgba($st-black, 0.125)
+);
+$button-border-width: 1px !default;
+$dark-button-box-shadow: 0 0 0 $button-border-width rgba($black, 0.4) !default;
+$st-dark-button-background: $st-plum-dark;
+$st-dark-button-background-hover: $st-plum-darker;
+$st-dark-button-background-active: $st-plum-darker;
+
+// Inputs
+$pt-input-height: $pt-grid-size * 3 !default;
+$pt-input-height-large: $pt-grid-size * 4 !default;
+
+// Others
+$pt-navbar-height: $pt-grid-size * 5;
+$pt-pageheading-height: $pt-grid-size * 10;
+$st-navbar-bg-color: $st-plum-darkest;
+$st-navbar-border-bottom: 1px solid $st-black;
+
+// Action bar
+$st-action-bar-height: $pt-pageheading-height;
+$st-action-bar-top: 0;
+
+// Entity nav
+$st-entity-nav-height: $pt-navbar-height;
+$st-entity-nav-top: $st-action-bar-height;
+$st-entity-nav-bg-color: $st-almost-black;
+
+// Fixed Sidebar top
+$st-fixed-sidebar-top: $st-entity-nav-top + $pt-navbar-height + $pt-grid-size * 2;
+
+// Tabs
+$st-tab-color: rgba($st-white, 0.75);
+$st-tab-active-color: $st-intent-primary;
+
+// Tooltips
+$st-tooltip-bg-color: $st-white;
+$st-tooltip-color: $st-black;
+$st-tooltip-border-radius: 3px;
+$st-tooltip-box-shadow: 0 0 0 1px rgba($st-black, 0.2), 0 2px 4px rgba($st-black, 0.4),
+  0 8px 24px rgba($st-black, 0.4);
+
+// Dialog
+$dialog-padding: $pt-grid-size * 2 !default;
+$st-dialog-bg-color: $st-plum-dark;
+$st-dialog-color: $st-white;
+$st-dialog-header-bg-color: $st-plum;
+
+//Menu
+$menu-item-padding: ($pt-button-height - $pt-icon-size-standard) / 2 !default;
+
+// Z-indices
+$pt-z-index-base: 0 !default;
+$pt-z-index-content: $pt-z-index-base + 10 !default;
+$pt-z-index-overlay: $pt-z-index-content + 10 !default;
+
+// Shadow opacities
+$pt-border-shadow-opacity: 0.1 !default;
+$pt-drop-shadow-opacity: 0.2 !default;
+$pt-dark-border-shadow-opacity: $pt-border-shadow-opacity * 2 !default;
+$pt-dark-drop-shadow-opacity: $pt-drop-shadow-opacity * 2 !default;
+
+// Elevations
+// all shadow lists must be the same length to avoid flicker in transitions.
+$pt-elevation-shadow-0: 0 0 0 1px $pt-divider-black, 0 0 0 rgba($black, 0),
+  0 0 0 rgba($black, 0) !default;
+$pt-elevation-shadow-1: border-shadow($pt-border-shadow-opacity), 0 0 0 rgba($black, 0),
+  0 1px 1px rgba($black, $pt-drop-shadow-opacity) !default;
+$pt-elevation-shadow-2: border-shadow($pt-border-shadow-opacity),
+  0 1px 1px rgba($black, $pt-drop-shadow-opacity),
+  0 2px 6px rgba($black, $pt-drop-shadow-opacity) !default;
+$pt-elevation-shadow-3: border-shadow($pt-border-shadow-opacity),
+  0 2px 4px rgba($black, $pt-drop-shadow-opacity),
+  0 8px 24px rgba($black, $pt-drop-shadow-opacity) !default;
+$pt-elevation-shadow-4: border-shadow($pt-border-shadow-opacity),
+  0 4px 8px rgba($black, $pt-drop-shadow-opacity),
+  0 18px 46px 6px rgba($black, $pt-drop-shadow-opacity) !default;
+
+$pt-dark-elevation-shadow-0: 0 0 0 1px $pt-dark-divider-black, 0 0 0 rgba($black, 0),
+  0 0 0 rgba($black, 0) !default;
+$pt-dark-elevation-shadow-1: border-shadow($pt-dark-border-shadow-opacity), 0 0 0 rgba($black, 0),
+  0 1px 1px rgba($black, $pt-dark-drop-shadow-opacity) !default;
+$pt-dark-elevation-shadow-2: border-shadow($pt-dark-border-shadow-opacity),
+  0 1px 1px rgba($black, $pt-dark-drop-shadow-opacity),
+  0 2px 6px rgba($black, $pt-dark-drop-shadow-opacity) !default;
+$pt-dark-elevation-shadow-3: border-shadow($pt-dark-border-shadow-opacity),
+  0 2px 4px rgba($black, $pt-dark-drop-shadow-opacity),
+  0 8px 24px rgba($black, $pt-dark-drop-shadow-opacity) !default;
+$pt-dark-elevation-shadow-4: border-shadow($pt-dark-border-shadow-opacity),
+  0 4px 8px rgba($black, $pt-dark-drop-shadow-opacity),
+  0 18px 46px 6px rgba($black, $pt-dark-drop-shadow-opacity) !default;
+
+// Transitions
+$pt-transition-ease: cubic-bezier(0.4, 1, 0.75, 0.9) !default;
+$pt-transition-ease-bounce: cubic-bezier(0.54, 1.12, 0.38, 1.11) !default;
+$st-transition-duration-sm: 150ms;
+$st-transition-duration-md: 200ms;
+$st-transition-duration-lg: 250ms;
+$pt-transition-duration: 100ms !default;
+
+// Light theme styles
+
+$pt-input-box-shadow: inset border-shadow(0.15),
+  inset 0 1px 1px rgba($black, $pt-drop-shadow-opacity) !default;
+$pt-dialog-box-shadow: $pt-elevation-shadow-4 !default;
+$pt-popover-box-shadow: $pt-elevation-shadow-3 !default;
+$pt-tooltip-box-shadow: $pt-popover-box-shadow !default;
+
+// Dark theme styles
+$pt-dark-input-box-shadow: inset border-shadow(0.3),
+  inset 0 1px 1px rgba($black, $pt-dark-drop-shadow-opacity) !default;
+$pt-dark-dialog-box-shadow: $pt-dark-elevation-shadow-4 !default;
+$pt-dark-popover-box-shadow: $pt-dark-elevation-shadow-3 !default;
+$pt-dark-tooltip-box-shadow: $pt-dark-popover-box-shadow !default;
+
+// Color aliases
+$pt-intent-primary: $st-intent-primary;
+$pt-intent-success: $st-intent-success;
+$pt-intent-warning: $st-intent-warning;
+$pt-intent-danger: $st-intent-danger;
+
+$pt-app-background-color: $light-gray5 !default;
+$pt-dark-app-background-color: $st-almost-black;
+
+$pt-text-color: $dark-gray1 !default;
+$pt-text-color-muted: $gray1 !default;
+$pt-text-color-disabled: rgba($pt-text-color-muted, 0.5) !default;
+$pt-heading-color: $pt-text-color !default;
+$pt-link-color: $st-blue;
+$pt-dark-text-color: $light-gray5 !default;
+$pt-dark-text-color-muted: $gray5 !default;
+$pt-dark-text-color-disabled: rgba($pt-dark-text-color-muted, 0.5) !default;
+$pt-dark-link-color: $blue5 !default;
+$pt-dark-heading-color: $pt-dark-text-color !default;
+// Default text selection color using #7dbcff
+$pt-text-selection-color: rgba(125, 188, 255, 0.6) !default;
+
+$pt-icon-color: $pt-text-color-muted !default;
+$pt-icon-color-hover: $pt-text-color !default;
+$pt-icon-color-disabled: $pt-text-color-disabled !default;
+$pt-icon-color-selected: $pt-intent-primary !default;
+
+$pt-dark-icon-color: $st-white !default;
+$pt-dark-icon-color-hover: $pt-dark-text-color !default;
+$pt-dark-icon-color-disabled: $pt-dark-text-color-disabled !default;
+$pt-dark-icon-color-selected: $pt-intent-primary !default;
+
+$pt-divider-black: rgba($black, 0.15) !default;
+$pt-dark-divider-black: rgba($black, 0.4) !default;
+$pt-dark-divider-white: rgba($white, 0.15) !default;
+
+$pt-code-text-color: $pt-text-color-muted !default;
+$pt-dark-code-text-color: $pt-dark-text-color-muted !default;
+$pt-code-background-color: rgba($white, 0.7) !default;
+$pt-dark-code-background-color: rgba($black, 0.3) !default;
+
+//  Foundation for Sites Settings
+//  -----------------------------
+//@import '~foundation-sites/scss/util/util';
+
+// 2. Breakpoints
+// --------------
+$breakpoints: (large: 0);
+$print-breakpoint: large;
+$breakpoint-classes: (large);
+
+// 56. Xy Grid
+// -----------
+
+$xy-grid: true;
+$grid-container: $st-container-max-width;
+$grid-columns: 12;
+$grid-margin-gutters: (large: $st-grid-gutter);
+$grid-padding-gutters: $grid-margin-gutters;
+$grid-container-padding: $grid-padding-gutters;
+$grid-container-max: $st-container-max-width;
+$xy-block-grid-max: 8;
+$st-gutters-sm: 0.5rem;
+$st-gutters-md: 1.5rem;

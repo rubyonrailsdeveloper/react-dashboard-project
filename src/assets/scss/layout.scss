@@ -1,0 +1,21 @@
+html {
+  height: 100%;
+
+  @media (-ms-high-contrast: none) {
+    display: flex;
+  }
+}
+
+body {
+  min-width: 100%;
+  min-height: 100%;
+  margin: 0;
+  display: inline-flex;
+  flex-direction: column;
+  background-color: $pt-dark-app-background-color;
+}
+
+#root,
+.app {
+  @include st-v-box();
+}

@@ -1,0 +1,37 @@
+.value-bar {
+  display: flex;
+  width: 100%;
+  margin-bottom: 1px;
+}
+
+.value-bar-label, .value-bar-bar {
+  flex-grow: 1;
+  width: 50%;
+}
+
+
+.value-bar-label, a.value-bar-label {
+  width: 45%;
+  color: $st-gray;
+  text-decoration: none;
+  &:hover {
+    color: $st-gray;
+    text-decoration: none;
+  }
+}
+
+.value-bar-bar {
+  width: 55%;
+  height: 32px;
+  margin-right: $pt-grid-size;
+  line-height: 32px;
+  color: $st-white;
+  .value-bar-value {
+    opacity: 0.7;
+    position: absolute;
+  }
+  .value-bar-bar-inner {
+    padding: 0 $pt-grid-size/2;
+    height: 100%;
+  }
+}

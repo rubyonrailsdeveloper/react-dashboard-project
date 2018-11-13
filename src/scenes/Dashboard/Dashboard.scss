@@ -1,0 +1,147 @@
+.dashboard {
+  /* Begin: new layout styles */
+
+  &-section {
+    @include st-row($selector: '.dashboard-section-item', $gutters: $st-gutters-md);
+    margin-bottom: $st-gutters-md;
+
+    &-item {
+      &.dashboard-clusters {
+        flex-grow: 2;
+        > .panel-body {
+          flex-direction: row;
+          .dashboard-cluster-card {
+            flex-grow: 1;
+            border-radius: 0;
+            box-shadow: none;
+          }
+        }
+      }
+      &.dashboard-teams {
+        flex-grow: 1;
+      }
+      &.dashboard-metrics {
+        display: flex;
+        flex-grow: 3;
+        .dashboard-metrics-panel {
+          flex-grow: 1;
+          box-shadow: none;
+        }
+      }
+    }
+    &.dashboard-topteams {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .dashboard-topteams-panel {
+      box-shadow: none;
+      flex-grow: 1;
+    }
+  }
+
+  
+  &-pipelines, &-topics, &-toppipelines, &-toptopics {
+    flex-grow: 1;
+  }
+
+  &-pipelines, &-topics {
+    > .panel-body {
+      display: flex;
+      flex-direction: row;
+      padding: 0;
+      > .panel {
+        flex-grow: 2;
+        box-shadow: none;
+      }
+      > .summary-panel {
+        flex-grow: 1;
+        border-right: 1px solid black;
+        box-shadow: none;
+      }
+    }
+  }
+
+  // TODO: x-axis should be shown/hidden by a prop not css
+  .line-graph-wrapper {
+    .x-axis {
+      display: none;
+    }
+  }
+
+  /* End: new layout styles */
+  &-metrics-OLD {
+    margin-top: 30px;
+    margin-bottom: 0.5rem;
+  }
+
+  &-graphs-toolbar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+
+    &.hide {
+      display: none;
+    }
+  }
+
+  &-header {
+    flex: none;
+    height: $st-action-bar-height;
+    display: flex;
+    background-color: $st-page-bg-color;
+    overflow: hidden;
+  }
+  &-header-wrap {
+    @include st-container();
+    flex: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &-username {
+    font-size: $st-page-header;
+    font-family: $pt-font-family-slab;
+    font-weight: $st-font-weight-bold;
+    color: $st-page-header-color;
+  }
+  &-notice {
+    .pt-spinner.pt-small:not(.pt-svg-spinner) {
+      display: inline-block;
+      width: $pt-font-size;
+      margin: 2px 0 -2px;
+      margin-right: $pt-grid-size / 2;
+
+      path {
+        stroke-width: 24;
+      }
+    }
+  }
+  &-wrap {
+    @include st-container();
+    padding-bottom: $st-grid-v-gutter;
+    flex: auto;
+    width: 100%;
+  }
+
+  &-summary {
+    @include st-row($selector: '.dashboard-summary-group', $gutters: $st-gutters-md);
+    margin-bottom: $st-gutters-md;
+  }
+
+  &-stats {
+    @include st-row($selector: '.panel', $gutters: $st-gutters-md);
+    margin-bottom: $st-gutters-md;
+  }
+
+  // .stack-graph-with-label {
+  //   margin-bottom: 1.5rem;
+  // }
+
+  h4 {
+    margin: 0;
+    font-size: $st-font-size-xxl;
+    font-weight: $st-font-weight-regular;
+    letter-spacing: $st-letter-spacing;
+  }
+}

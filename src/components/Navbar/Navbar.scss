@@ -1,0 +1,81 @@
+.navbar,
+.pt-dark .navbar {
+  flex: none;
+  padding-left: 0;
+  padding-right: 0;
+  background-color: $st-navbar-bg-color;
+  height: 5*$pt-grid-size;
+  border-bottom: $st-navbar-border-bottom;
+  box-shadow: none;
+  > .navbar-wrap {
+    @include st-container();
+  }
+
+  .pt-navbar-divider {
+    height: $pt-font-size + 1;
+  }
+  .pt-navbar-group {
+    height: 5*$pt-grid-size;
+    >  {
+      a,
+      span {
+        + a,
+        + span {
+          margin-left: $pt-grid-size;
+        }
+      }
+    }
+
+    .pt-button {
+      letter-spacing: $st-letter-spacing;
+      font-weight: $st-font-weight-regular;
+      color: $st-gray-dark;
+      background-color: transparent;
+      &:hover, &.pt-active {
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+.pt-navbar-heading {
+  margin-right: $pt-grid-size * 2;
+  padding: 4px $pt-grid-size * 2 4px 0;
+
+  .navbar-logo {
+    text-indent: -999px;
+    overflow: hidden;
+    display: block;
+    background: url('#{$st-images-path}/streamlio-logo-white.svg') no-repeat center;
+    background-size: contain;
+    width: 90px;
+  }
+}
+
+.navbar-search {
+  width: $pt-grid-size * 30;
+  margin-right: $pt-grid-size * 2;
+}
+
+.navbar-user-icon {
+  display: inline-block;
+  width: $pt-grid-size * 2;
+  height: $pt-grid-size * 2;
+  border-radius: 50%;
+  background-color: $st-teal;
+  color: $st-white;
+  vertical-align: middle;
+  margin-left: $pt-grid-size * -0.5;
+  margin-right: $pt-grid-size;
+  line-height: 20px;
+  text-align: center;
+  font-size: $pt-font-size-small;
+  font-weight: $st-font-weight-bold;
+}
+
+.navbar-popover.pt-popover.pt-dark {
+  .pt-popover-content {
+    background: $st-navbar-bg-color;
+    min-width: $pt-grid-size * 20;
+  }
+}

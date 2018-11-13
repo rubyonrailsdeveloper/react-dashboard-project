@@ -1,0 +1,29 @@
+.labeled-status {
+  padding: 0 $pt-grid-size/2;
+  margin-right: $pt-grid-size/2;
+  border-radius: $pt-border-radius;
+  &:hover {
+    background: $st-plum-dark;
+  }
+  &-label {
+    font-size: $st-font-size-xl;
+    vertical-align: middle;
+  }
+  .health-indicator {
+    margin-right: $pt-grid-size/2;
+    vertical-align: middle;
+  }
+
+  .pt-intent-danger {
+    color: $st-intent-danger;
+  }
+  .pt-intent-warning {
+    color: $st-intent-warning;
+  }
+  .pt-intent-success {
+    color: $st-intent-success;
+  }
+  .intent-unknown {
+    color: $st-intent-unknown;
+  }
+}

@@ -1,0 +1,18 @@
+.dashboard-cluster-card {
+  > .panel-body {
+    text-align: center;
+    max-width: 200px;
+    > .st-icon {
+      margin-top: $pt-grid-size;
+    }
+  }
+  .cluster-name {
+    color: $st-gray;
+    font-size: $pt-font-size;
+    font-weight: $st-font-weight-medium;
+    text-transform: none;
+  }
+  .pt-text-muted {
+    color: $st-plum-bright;
+  }
+}

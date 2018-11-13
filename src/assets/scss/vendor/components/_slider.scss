@@ -1,0 +1,35 @@
+$st-slider-track-height: 3px;
+$st-slider-track-background: $st-plum-darker;
+$st-slider-progress-background: $st-plum-bright;
+$st-slider-handle-background: $st-plum-bright;
+$st-slider-handle-hover: $st-plum;
+$st-slider-handle-active: $st-plum-darker;
+
+.pt-slider-track,
+.pt-slider-progress {
+  height: $st-slider-track-height;
+  top: 7px;
+}
+
+.pt-slider-handle {
+  border-radius: 50%;
+  box-shadow: none;
+}
+
+.pt-dark {
+  .pt-slider-track {
+    background-color: $st-slider-track-background;
+  }
+  .pt-slider-progress {
+    background-color: $st-slider-progress-background;
+  }
+  .pt-slider-handle {
+    background-color: $st-slider-handle-background;
+    &:hover {
+      background-color: $st-slider-handle-hover;
+    }
+    &:active {
+      background-color: $st-slider-handle-active;
+    }
+  }
+}

@@ -1,0 +1,78 @@
+$st-graph-gutter-size: 0.5rem;
+
+.entity-page {
+  @include st-v-box();
+}
+
+.entity-explorer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 1 auto;
+}
+
+.entity-detail {
+  margin-top: $st-grid-v-gutter;
+  &-content {
+    @include st-content-sidebar-layout();
+  }
+
+  &-aside-collapse {
+    flex: 0 1 auto;
+    will-change: height;
+
+    > .pt-collapse-body[aria-hidden='true'] {
+      display: block;
+      visibility: hidden;
+      pointer-events: none;
+    }
+  }
+
+  &-graphs {
+    &-toolbar {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: $st-gutters-sm * 2;
+    }
+  }
+
+  &-graphs-layout {
+    @include st-graphs-layout();
+  }
+}
+
+.entity-dashboard {
+  .dashboard-summary, .dashboard-summary.dashboard-stats {
+    @include st-row($selector: '.panel', $gutters: 0);
+    margin-bottom: $st-gutters-sm;
+  }
+  .dashboard-summary.dashboard-stats {
+    .stat-usage {
+      &-chart {
+        max-width: $pt-grid-size * 8;
+        padding: $pt-grid-size 0;
+      }
+    }
+  }
+
+  .dashboard-stats {
+    @include st-row($selector: '.panel');
+    margin-bottom: $st-gutters-sm;
+  }
+
+  .dashboard-graphs {
+    margin-top: $pt-grid-size * 3;
+    margin-bottom: $st-gutters-sm;
+
+    .multiple-graphs {
+      @include xy-cell(auto, $gutters: 0);
+      margin-bottom: $st-gutters-sm;
+    }
+    &-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: $st-gutters-sm * 2;
+    }
+  }
+}

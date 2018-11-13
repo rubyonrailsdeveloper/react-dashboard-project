@@ -1,0 +1,22 @@
+.pt-tooltip .pt-popover-content {
+  padding: $pt-grid-size / 2 $pt-grid-size;
+  border-radius: $st-tooltip-border-radius;
+}
+
+.pt-dark .pt-tooltip,
+.pt-tooltip.pt-dark {
+  background-color: none;
+  border-radius: $st-tooltip-border-radius;
+
+  .pt-popover-content {
+    background-color: $st-tooltip-bg-color;
+    color: $st-tooltip-color;
+  }
+  .pt-popover-arrow-fill {
+    fill: $st-tooltip-bg-color;
+  }
+}
+
+.pt-tether-element-attached-bottom.pt-tether-target-attached-top > .pt-tooltip > .pt-popover-arrow {
+  bottom: -7px;
+}

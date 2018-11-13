@@ -1,0 +1,80 @@
+.health-indicator-icon {
+  display: inline-flex;
+  width: $pt-font-size;
+  height: $pt-font-size;
+  vertical-align: middle;
+  margin-top: -1px;
+  @mixin health-icon-shadow($color) {
+    box-shadow: 0 0 5px 0 rgba($color, 0.33);
+  }
+  border: 1px solid;
+  border-radius: 50%;
+  background-color: $st-gray-darker;
+  border: 1px solid $st-gray-darker;
+  @include health-icon-shadow($st-gray-darker);
+
+  &.pt-intent-success {
+    background-color: $st-intent-success;
+    border-color: $st-green-bright;
+    @include health-icon-shadow($st-intent-success);
+  }
+  &.pt-intent-warning {
+    background-color: $st-intent-warning;
+    border-color: $st-yellow-bright;
+    @include health-icon-shadow($st-intent-warning);
+  }
+  &.pt-intent-danger {
+    background-color: $st-intent-danger;
+    border-color: $st-red-bright;
+    @include health-icon-shadow($st-intent-danger);
+  }
+  &.intent-unknown {
+    background-color: $st-intent-unknown;
+    border-color: transparent;
+    box-shadow: none;
+  }
+}
+
+.status-indicator-icon {
+  display: inline-flex;
+  width: $pt-grid-size * 1.4;
+  height: $pt-grid-size * 1.4;
+  vertical-align: middle;
+  margin-top: -1px;
+  margin-left: -1px;
+  border-radius: 50%;
+  background-color: $st-plum-darkest;
+  color: $st-black;
+  text-align: center;
+
+  .pt-icon-standard {
+    font-size: 9px;
+    width: 100%;
+    text-align: center;
+    line-height: $pt-grid-size * 1.2;
+  }
+
+  &.is-paused {
+    color: $st-yellow;
+    border: 1px solid $st-yellow;
+  }
+}
+
+.pie-chart-icon {
+  width: $pt-font-size;
+  height: $pt-font-size;
+  transform: rotate(-0.25turn);
+
+  &-bg {
+    fill: $st-plum-darkest;
+  }
+  &-fill-success {
+    fill: $st-intent-success;
+  }
+  &-fill-warning {
+    fill: $st-intent-warning;
+  }
+  &-fill-danger {
+    fill: $st-intent-danger;
+  }
+}

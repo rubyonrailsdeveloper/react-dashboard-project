@@ -1,0 +1,9 @@
+@mixin transition-duration-sm($property: all, $duration: 0.15s, $easing: ease) {
+  transition: $property $duration $easing;
+}
+@mixin transition-duration-md($property: all, $duration: 0.25s, $easing: ease) {
+  transition: $property $duration $easing;
+}
+@mixin transition-duration-lg($property: all, $duration: 0.35s, $easing: ease) {
+  transition: $property $duration $easing;
+}

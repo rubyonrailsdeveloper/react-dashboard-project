@@ -1,0 +1,36 @@
+.st-gauge {
+  // min-width: 145px;
+  // max-width: 200px;
+  .c3-chart-arcs .c3-chart-arcs-background {
+    fill: #000;
+    stroke: black;
+  }
+  
+  .c3-chart-arcs .c3-chart-arcs-gauge-unit {
+    fill: #000;
+    font-size: 16px; }
+  
+  .c3-chart-arcs .c3-chart-arcs-gauge-max {
+    // display: none;
+    fill: #777;
+  }
+  
+  .c3-chart-arcs .c3-chart-arcs-gauge-min {
+    // display: none;
+    fill: #777;
+  }
+  
+  .c3-chart-arc .c3-gauge-value {
+    fill: #fff;
+    font-size: 24px !important;
+    font-weight: 100;
+  }
+  
+  .c3-arc-data {
+    stroke: black;
+  }
+  
+  .c3-chart-arc path {
+    stroke: black;
+  }
+}

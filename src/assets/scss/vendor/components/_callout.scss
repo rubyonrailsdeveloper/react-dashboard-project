@@ -1,0 +1,36 @@
+.pt-dark {
+  .pt-callout {
+    &.pt-intent-danger {
+      background-color: rgba($st-intent-danger, 0.25);
+
+      &[class*='pt-icon-']::before,
+      h5 {
+        color: $st-intent-danger;
+      }
+    }
+    &.pt-intent-success {
+      background-color: rgba($st-intent-success, 0.25);
+
+      &[class*='pt-icon-']::before,
+      h5 {
+        color: $st-intent-success;
+      }
+    }
+    &.pt-intent-warning {
+      background-color: rgba($st-intent-warning, 0.25);
+
+      &[class*='pt-icon-']::before,
+      h5 {
+        color: $st-intent-warning;
+      }
+    }
+    &.pt-intent-primary {
+      background-color: rgba($st-intent-primary, 0.25);
+
+      &[class*='pt-icon-']::before,
+      h5 {
+        color: $st-intent-primary;
+      }
+    }
+  }
+}

@@ -1,0 +1,104 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  box-shadow: none;
+  color: $st-panel-color;
+  border-radius: $pt-border-radius;
+  overflow: hidden;
+  @include transition-duration-md();
+  .pt-menu {
+    min-width: 0;
+    background-color: transparent;
+    padding-left: $st-panel-gutter - $menu-item-padding;
+    padding-right: $st-panel-gutter - $menu-item-padding;
+  }
+}
+a.panel:hover {
+  .panel-body, .panel-headers, .panel-footer {
+    background-color: $st-panel-header-bg-color;
+    color: $st-panel-color;
+  }
+}
+
+.panel-header {
+  font-size: $st-panel-header-font-size;
+  letter-spacing: $st-letter-spacing;
+  font-weight: $st-font-weight-medium;
+  color: $st-panel-header-color;
+  // min-height: $st-panel-header-height;
+  min-height: 48px;
+  background-color: $st-panel-body-bg-color;
+  text-transform: uppercase;
+
+  &.separate-header {
+    background-color: $st-panel-header-bg-color;
+    margin-bottom: $st-panel-component-gutter;
+  }
+
+  &.has-children-layout {
+    display: flex;
+    align-items: center;
+    padding-left: $st-panel-gutter;
+    padding-right: $st-panel-gutter;
+
+    .Select{
+      .Select-control{
+        background-color: #242429;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-radius: 0%;
+        width: 178px;
+        height: 32px;
+        border-color: #8e8e99;
+
+        .Select-value-label{
+          color: #8e8e99 !important;
+        }
+      }
+      .Select-clear-zone{
+        display: none;
+      }
+    }
+  }
+
+  .st-icon, .pt-icon-standard {
+    margin-right: $pt-grid-size;
+  }
+}
+
+.panel-body {
+  flex: auto;
+
+  &.has-children-layout {
+    display: flex;
+    flex-direction: column;
+    // padding: $st-panel-body-v-gutter $st-panel-gutter;
+    padding: 10px 24px;
+    background-color: $st-panel-body-bg-color;
+
+    .DashboardTopTeams{
+      border-top: 1px solid black;
+    }
+  }
+}
+
+.panel-footer {
+  font-size: $pt-font-size;
+  min-height: $st-panel-footer-height;
+  background-color: $st-panel-footer-bg-color;
+
+  &.has-children-layout {
+    display: flex;
+    flex-direction: column;
+    padding: $st-panel-body-v-gutter $st-panel-gutter;
+    background-color: $st-panel-footer-bg-color;
+  }
+
+  h3 {
+    text-transform: uppercase;
+    color: $st-gray-darker;
+    font-weight: normal;
+    font-size: $pt-font-size-small;
+  }
+}

@@ -1,0 +1,11 @@
+.ink-bar {
+  height: 2px;
+  position: absolute;
+  background-color: $pt-link-color;
+  left: 0;
+  width: 0;
+  bottom: 2px;
+}
+.ink-bar.is-animate {
+  transition: left .6s cubic-bezier(.35,0,.25,1), width .6s cubic-bezier(.35,0,.25,1);
+}

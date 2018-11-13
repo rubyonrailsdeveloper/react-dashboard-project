@@ -1,0 +1,87 @@
+@mixin st-container {
+  @include xy-grid-container();
+  min-width: $st-container-min-width;
+}
+
+@mixin st-v-box {
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin st-nav-content-layout() {
+  @include xy-grid($wrap: false);
+  @include xy-gutters($negative: true, $gutters: $st-gutters-md);
+
+  > :first-child {
+    @include xy-cell(2 of 12, $gutters: $st-gutters-md);
+    align-self: flex-start;
+  }
+
+  > :nth-child(2) {
+    @include xy-cell(10 of 12, $gutters: $st-gutters-md);
+  }
+}
+
+@mixin st-sticky-sidebar-layout() {
+  display: flex;
+  flex-direction: column;
+  flex: none;
+  height: calc(100vh - #{$st-fixed-sidebar-top});
+
+  @supports (position: sticky) {
+    position: sticky;
+    top: $st-fixed-sidebar-top;
+  }
+}
+
+@mixin st-content-sidebar-layout($content: '> :first-child', $sidebar: '> :nth-child(2)') {
+  @include st-container();
+  @include xy-grid();
+  padding-top: $st-grid-v-gutter;
+  padding-bottom: $st-grid-v-gutter;
+  min-height: 100vh;
+
+  #{$content} {
+    @include xy-cell(auto, $gutter-position: right, $gutters: $st-gutters-md);
+  }
+
+  #{$sidebar} {
+    transform: translateZ(0);
+    @include xy-cell(3 of 12, $gutter-position: left, $gutters: $st-gutters-md);
+    @include st-sticky-sidebar-layout();
+  }
+}
+
+@mixin st-row($gutters: $st-gutters-sm, $selector: '.cell') {
+  @include xy-grid();
+  @include xy-gutters($gutters: $gutters, $negative: true);
+
+  #{$selector} {
+    @include xy-cell(auto, $gutters: $gutters);
+    flex: 1;
+  }
+}
+
+@mixin st-graphs-layout() {
+  @include xy-grid();
+  @include xy-gutters($gutters: $st-gutters-sm, $negative: true);
+
+  .col {
+    &-12 {
+      @include xy-cell(12 of 12, $gutters: $st-gutters-sm, $gutter-position: left right top bottom);
+    }
+    &-8 {
+      @include xy-cell(8 of 12, $gutters: $st-gutters-sm, $gutter-position: left right top bottom);
+    }
+    &-6 {
+      @include xy-cell(6 of 12, $gutters: $st-gutters-sm, $gutter-position: left right top bottom);
+    }
+    &-3 {
+      @include xy-cell(3 of 12, $gutters: $st-gutters-sm, $gutter-position: left right top bottom);
+    }
+    &-4 {
+      @include xy-cell(4 of 12, $gutters: $st-gutters-sm, $gutter-position: left right top bottom);
+    }
+  }
+}

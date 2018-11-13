@@ -1,0 +1,33 @@
+.inline-dialog {
+  @include st-hide();
+  z-index: $pt-z-index-base;
+
+  & .inline-dialog-content {
+    position: relative;
+    z-index: $pt-z-index-base;
+  }
+
+  &-open {
+    z-index: $pt-z-index-overlay;
+
+    .inline-dialog-backdrop {
+      position: fixed;
+    }
+
+    .inline-dialog-content {
+      left: 50%;
+      position: fixed;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: $pt-z-index-overlay;
+      width: 70vw;
+      height: 80vh;
+      display: flex;
+
+      .single-graph {
+        flex: auto;
+        margin: 0;
+      }
+    }
+  }
+}

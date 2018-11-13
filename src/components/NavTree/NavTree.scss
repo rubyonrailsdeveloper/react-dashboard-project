@@ -1,0 +1,68 @@
+$st-tree-row-height: $pt-grid-size * 3;
+$st-tree-icon-spacing: $pt-grid-size * 1.2;
+$st-tree-icon-size: $pt-font-size;
+
+.nav-tree {
+  padding: $pt-grid-size/2;
+  overflow: hidden;
+
+  .pt-tree-node-content {
+    padding-right: $pt-grid-size;
+    position: relative;
+
+    .pt-tree-node-icon {
+      margin-right: $st-tree-icon-spacing;
+    }
+
+    &[class*='pt-tree-node-content-'] {
+      margin-top: $pt-grid-size/2;
+    }
+
+    &[class*='pt-tree-node-content-']::before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: $pt-grid-size;
+      height: $st-tree-row-height + $pt-grid-size/2;
+      border-left: 1px dotted rgba($st-white, 0.5);
+      border-bottom: 1px dotted rgba($st-white, 0.5);
+      top: -$st-tree-row-height / 2 - $pt-grid-size/2;
+    }
+    &[class*='pt-tree-node-content-']::after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: $pt-grid-size * 0.3;
+      height: $pt-grid-size * 0.3;
+      border-radius: 50%;
+      background-color: $st-white;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  @for $i from 0 through 5 {
+    .pt-tree-node-content-#{$i} {
+      padding-left: $pt-grid-size + ($st-tree-icon-size + $st-tree-icon-spacing) * $i;
+
+      &::before {
+        left: $pt-grid-size * 1.5 + ($st-tree-icon-size + $st-tree-icon-spacing) * ($i - 1);
+      }
+      &::after {
+        left: $pt-grid-size * 2.2 + ($st-tree-icon-size + $st-tree-icon-spacing) * ($i - 1);
+      }
+    }
+  }
+}
+
+.side-nav-tree {
+  .panel-body.has-children-layout {
+    padding: $pt-grid-size 0;
+  }
+  .pt-menu {
+    background-color: transparent;
+    padding: 0;
+  }
+  .nav-tree {
+    padding: 0;
+  }
+}

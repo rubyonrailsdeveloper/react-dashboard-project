@@ -1,0 +1,30 @@
+.pt-datepicker {
+  .pt-datepicker-caption-caret {
+    top: 4px;
+    margin-left: 12px;
+  }
+}
+
+.pt-dark .pt-datepicker {
+  background: $st-popover-bg-color;
+
+  .DayPicker-Day {
+    &:hover,
+    &:focus {
+      background: $st-plum;
+    }
+    &:active {
+      background: $st-plum-darker;
+    }
+
+    &.DayPicker-Day--selected {
+      background-color: $st-intent-primary;
+      &:hover {
+        background-color: $st-teal-dark;
+      }
+      &:active {
+        background-color: $st-teal-darker;
+      }
+    }
+  }
+}

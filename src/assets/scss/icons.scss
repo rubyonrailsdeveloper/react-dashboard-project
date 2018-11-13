@@ -1,0 +1,19 @@
+$st-icon-font: 'StIcons';
+$st-icons: (
+  'processing': '\E900',
+  'topic': '\E902',
+  'pipeline': '\E901'
+);
+
+@font-face {
+  font-family: $st-icon-font;
+  src: url('../fonts/icons/st-icons.woff');
+}
+
+@each $name, $content in $st-icons {
+  .pt-icon-st-#{$name}::before {
+    font-family: $st-icon-font !important;
+    content: $content;
+    vertical-align: middle;
+  }
+}

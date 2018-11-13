@@ -1,0 +1,39 @@
+.button-tab {
+  font-size: $pt-font-size;
+  font-weight: $st-font-weight-medium;
+  line-height: $pt-button-height;
+  letter-spacing: $st-letter-spacing;
+  display: inline-block;
+  position: relative;
+  border: none;
+  padding: 0;
+
+  &.pt-active::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: $st-tab-active-color;
+  }
+
+  .entity-nav-link {
+    margin-left: $pt-grid-size * 2;
+  }
+}
+
+.pt-dark .pt-button:not([class*='pt-intent-']).button-tab {
+  color: $st-tab-color;
+  background: transparent;
+  box-shadow: none;
+
+  &.pt-active {
+    color: $st-tab-active-color;
+  }
+  &:hover {
+    text-decoration: none;
+    color: $st-tab-active-color;
+  }
+}

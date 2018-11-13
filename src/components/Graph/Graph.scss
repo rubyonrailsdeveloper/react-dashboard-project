@@ -1,0 +1,141 @@
+$st-graph-gridlines-stroke: $st-white;
+
+// $st-metric-color-default: $st-intent-success;
+$st-metric-color-storageRateRead: #714fe0;
+$st-metric-color-storageRateWrite: #9579f2;
+$st-metric-color-rateIn: #e800a0;
+$st-metric-color-rateOut: #fa57c1;
+$st-metric-color-throughputIn: #0085d5;
+$st-metric-color-throughputOut: #6da9f2;
+$st-metric-color-backlog: #f2556f;
+$st-metric-color-failures: #ff7100;
+$st-metric-color-allSpoutsFailures: #ff9640;
+$st-metric-color-gc: #00cc99;
+$st-metric-color-gcInvocations: #7dd1bc;
+$st-metric-color-backPressure: #ffb0fc;
+$st-metric-color-avgToBeAcked: #bbde00;
+$st-metric-color-executeCount: $st-plum-bright;
+$st-metric-color-ackCount: $st-gray-darker;
+$st-metric-color-emitCount: $st-gray-dark;
+$st-metric-color-completeLatency: $st-plum;
+$st-metric-color-averageCompleteLatency: $st-plum-bright;
+$st-metric-color-averageExecuteLatency: $st-gray-darker;
+$st-metric-color-averageProcessLatency: $st-gray-dark;
+$st-metric-color-averageFailureLatency: $st-gray;
+
+.graph {
+  &-line {
+    @include st-intent(stroke);
+    opacity: 0.75;
+  }
+
+  &-dot {
+    @include st-intent(fill);
+    @include st-line-color(fill);
+    opacity: 1;
+  }
+
+  &-guideline.hide {
+    display: none;
+  }
+}
+
+.graph-line-metric {
+  // &-default { stroke: $st-metric-color-default !important; }
+  &-storageRateRead { stroke: $st-metric-color-storageRateRead !important; }
+  &-storageRateWrite { stroke: $st-metric-color-storageRateWrite !important; }
+  &-rateIn { stroke: $st-metric-color-rateIn !important; }
+  &-rateOut { stroke: $st-metric-color-rateOut !important; }
+  &-byteRateIn { stroke: $st-metric-color-throughputIn !important; }
+  &-byteRateOut { stroke: $st-metric-color-throughputOut !important; }
+  &-backlog { stroke: $st-metric-color-backlog !important; }
+  &-failures { stroke: $st-metric-color-failures !important; }
+  &-allSpoutsFailures { stroke: $st-metric-color-allSpoutsFailures !important; }
+  &-gc { stroke: $st-metric-color-gc !important; }
+  &-gcInvocations { stroke: $st-metric-color-gcInvocations !important; }
+  &-backPressure { stroke: $st-metric-color-backPressure !important; }
+  &-avgToBeAcked { stroke: $st-metric-color-avgToBeAcked !important; }
+  &-executeCount { stroke: $st-metric-color-executeCount !important; }
+  &-ackCount { stroke: $st-metric-color-ackCount !important; }
+  &-emitCount { stroke: $st-metric-color-emitCount !important; }
+  &-completeLatency { stroke: $st-metric-color-completeLatency !important; }
+  &-averageCompleteLatency { stroke: $st-metric-color-averageCompleteLatency !important; }
+  &-averageExecuteLatency { stroke: $st-metric-color-averageExecuteLatency !important; }
+  &-averageProcessLatency { stroke: $st-metric-color-averageProcessLatency !important; }
+  &-averageFailureLatency { stroke: $st-metric-color-averageFailureLatency !important; }
+}
+
+.x-axis {
+  background-color: $st-plum;
+  border-radius: 0 0 $pt-border-radius $pt-border-radius;
+  overflow: hidden;
+}
+
+.plottable {
+  .axis {
+    text {
+      font-family: $pt-font-family;
+      font-size: $pt-font-size-small;
+      fill: $st-panel-header-color;
+    }
+    line.baseline {
+      stroke: $st-plum-darkest;
+    }
+  }
+  .guide-line-layer line.guide-line {
+    stroke: $st-white;
+    stroke-width: 1px;
+  }
+  .gridlines line,
+  line.tick-mark {
+    stroke: $st-graph-gridlines-stroke;
+    opacity: 0.2;
+
+    &:first-child {
+      opacity: 0.4;
+    }
+  }
+  .content {
+    overflow: hidden;
+  }
+}
+
+.line-graph-wrapper {
+  position: relative;
+
+  .line-graph.stack .graph-line {
+    @include st-line-color(stroke);
+  }
+
+  .graph-loader,
+  .graph-error,
+  .graph-no-data-message {
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    transform: translate(50%, -50%);
+    border-radius: $pt-border-radius;
+    min-width: $pt-button-height;
+    height: $pt-button-height;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 8px;
+    p {
+      margin: 0;
+    }
+  }
+  .graph-loader {
+    background-color: rgba($st-black, 0.2);
+    padding: 0;
+  }
+  .graph-error {
+    background-color: rgba($st-red-darker, 0.2);
+    color: $st-red-bright;
+  }
+  .graph-no-data-message {
+    @include st-hide();
+    background-color: rgba($st-black, 0.2);
+    color: $st-white-50;
+  }  
+}

@@ -1,0 +1,89 @@
+.user-modify,
+.group-modify,
+.namespace-modify {
+  width: 560px;
+}
+
+.login-dialog {
+  width: 480px;
+  .pt-dialog-header {
+    height: 60px;
+    text-align: center;
+    h5 {
+      font-weight: $st-font-weight-regular;
+      font-size: $pt-font-size-large;
+    }
+  }
+  .pt-dialog-body {
+    margin: 30px 40px 40px;
+  }
+  .pt-dialog-footer {
+    margin: 30px 40px;
+  }
+}
+
+.entity-resource {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $pt-grid-size * 4;
+  &-field > .pt-label {
+    margin-bottom: $pt-grid-size / 2;
+  }
+  em {
+    font-style: normal;
+    color: $st-intent-success;
+  }
+  figure {
+    display: flex;
+    margin: 0;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .availability {
+    text-align: right;
+    margin-right: 1rem;
+    position: relative;
+    label {
+      display: block;
+      color: $st-white-50;
+      margin-bottom: $pt-grid-size / 2;
+    }
+  }
+  .pt-spinner .pt-spinner-track {
+    stroke: $st-plum-darkest;
+  }
+}
+
+.namespace-clusters {
+  ul {
+    list-style: none;
+    margin: 0 0 2rem 0;
+    padding: 0;
+    column-count: 4;
+    column-gap: 20px;
+  }
+}
+
+.namespace-permissions {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    display: flex;
+  }
+  li span {
+    flex: 1;
+    margin-left: 5px;
+    align-self: center;
+    display: inline-block;
+    text-align: center;
+    background: $st-plum-bright;
+    padding: 5px 0;
+  }
+  .pt-select {
+    flex: 4;
+  }
+}

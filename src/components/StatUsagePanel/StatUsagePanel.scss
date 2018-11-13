@@ -1,0 +1,14 @@
+.stat-usage-panel {
+  .stat-usage-percent {
+    font-size: $st-font-size-xxxl;
+    font-weight: 100;
+    padding: $pt-grid-size 0;
+    .st-icon {
+      margin-left: $pt-grid-size;
+      font-size: $st-font-size-xxl;
+    }
+    .st-icon-ok-muted {
+      display: none;
+    }
+  }
+}

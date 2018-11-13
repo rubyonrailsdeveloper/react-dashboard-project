@@ -1,0 +1,24 @@
+$st-toast-color: $st-white;
+$st-toast-bg-color: $st-black;
+
+.pt-dark .pt-toast,
+.pt-toast.pt-dark {
+  color: $st-toast-color;
+  background-color: $st-toast-bg-color;
+}
+
+.pt-toast,
+.pt-toast.pt-dark {
+  &.pt-intent-primary {
+    background-color: $st-intent-primary;
+  }
+  &.pt-intent-success {
+    background-color: $st-intent-success;
+  }
+  &.pt-intent-warning {
+    background-color: $st-intent-warning;
+  }
+  &.pt-intent-danger {
+    background-color: $st-intent-danger;
+  }
+}

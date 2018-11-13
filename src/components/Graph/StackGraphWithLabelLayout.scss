@@ -1,0 +1,183 @@
+$st-stack-graph-height: $pt-grid-size * 30;
+$st-stack-graph-axis-height: 26px;
+$st-stack-graph-secondary-color: $st-white-75;
+
+.dashboard-section{
+  .dashboard-toppipelines{
+    height: 456px;
+
+    // .panel-body{
+    //   padding:24px;
+    // }
+    .panel-body.has-children-layout{
+      padding:0px;
+      
+      .stack-graph-with-label{
+        height:100%;
+        min-height: 408px;
+
+        .line-graph-wrapper{
+          .plottable{
+            .x-gridlines{
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.panel-body > .stack-graph-with-label {
+  box-shadow: none;
+  background-color: transparent;
+}
+.stack-graph-with-label {
+  background: $st-graphs-bg-color;
+  color: $st-panel-color;
+  box-shadow: $st-panel-shadow;
+  border-radius: $pt-border-radius;
+  display: flex;
+
+  &-graph-header,
+  &-items-header {
+    display: flex;
+    align-items: center;
+    padding-left: $st-panel-gutter;
+    padding-right: $st-panel-gutter;
+    font-size: $st-panel-header-font-size;
+    letter-spacing: $st-letter-spacing;
+    font-weight: $st-font-weight-medium;
+    color: $st-panel-header-color;
+    min-height: $st-panel-header-height;
+    background: $st-panel-header-bg-color;
+    text-transform: uppercase;
+
+    //Overriding the button tab font size when direct child of graph header
+    > .button-tab {
+      font-size: $st-panel-header-font-size;
+    }
+
+    .graph-name {
+      margin-right: 0.5em;
+    }
+    .graph-unit {
+      opacity: 0.7;
+    }
+  }
+
+  &-graph-header {
+    border-radius: $pt-border-radius 0 0 0;
+  }
+
+  &-items-header {
+    border-radius: 0 $pt-border-radius 0 0;
+    justify-content: center;
+
+    .button-tab {
+      height: $st-panel-header-height;
+    }
+    .button-tab + .button-tab {
+      margin-left: $pt-grid-size * 2;
+    }
+  }
+
+  &-graphs-wrapper {
+    // flex: 1;
+    flex-grow: 1;
+    padding: 24px;
+
+  }
+
+  &-graph {
+    width: 100%;
+    // height: $st-stack-graph-height;
+    height: 360px;
+    position: relative;
+    flex: 3;    
+    // .line-graph-wrapper{
+    //   .line-graph{
+    //     height: 36px !important;
+    //   }
+    // }
+  }
+
+  &-items-wrapper {
+    // width: 33.33333%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    border-right: 1px solid rgba($st-black, 1);
+    padding: 24px;
+    // border-left: 1px solid rgba($st-black, 0.5);
+  }
+
+  &-items {
+    display: flex;
+    flex-direction: column;
+    // height: $st-stack-graph-height + $st-stack-graph-axis-height;
+    height: 360px;
+    // border-bottom:1px solid rgba($st-black, 1);
+    border-top:1px solid rgba($st-black, 1);
+    height: 100%;
+
+    .label-item-wrap {
+      flex: 1 100%;
+      align-items: center;
+      display: flex;
+      border-bottom: 1px solid rgba($st-black, 1);
+      padding: $pt-grid-size / 2;
+      // max-height: $pt-grid-size * 5;
+      max-height: 36px;
+
+      .label-item {
+        display: flex;
+        flex: 1 1;
+        height: 100%;
+        align-items: center;
+        border-radius: $pt-border-radius;
+        color: $st-gray;
+        text-decoration: none;
+
+        > div {
+          padding: 0 $st-panel-gutter / 4;
+        }
+        > div:first-child {
+          padding-left: $pt-grid-size;
+        }
+        > div:last-child {
+          padding-right: $pt-grid-size;
+        }
+
+        &:hover {
+          background-color: $st-plum-darker;
+        }
+        &:active {
+          background-color: $st-plum-darker;
+        }
+      }
+      .color .stripe {
+        @include st-line-color(background-color);
+        width: $pt-grid-size;
+        height: 3px;
+        display: block;
+      }
+      .color .circle {
+        @include st-line-color(background-color);
+        width: $pt-grid-size;
+        height: $pt-grid-size;
+        display: block;
+        border-radius: $pt-grid-size;
+      }
+
+      .name {
+        flex: 5 1;
+      }
+
+      .value {
+        text-align: right;
+        color: $st-stack-graph-secondary-color;
+        flex: 2 1;
+      }
+    }
+  }
+}

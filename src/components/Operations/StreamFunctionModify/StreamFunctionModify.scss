@@ -1,0 +1,64 @@
+//StreamFunction Dialog styles
+.streamFunctionModify {
+  max-width: 1440px;
+  margin: 0 auto;
+  min-width: 1280px;
+  width: auto;
+  // min-height: 500px;
+  // height: 70%;
+  display: flex;
+  
+  justify-content: flex-start;
+
+  >.pt-dialog-header, >.dialog-step-navigation, >form {
+    width: 100%;
+  }
+
+  >form {
+    flex-grow: 1;
+  }
+  
+  .streamFunctionModify-name {
+    display: flex;
+    justify-content: space-between;
+    max-width: 650px;
+
+    .name-divider {
+      align-self: flex-end;
+      color: $st-white-25;
+    }
+    .pt-label {
+      margin-bottom: 20px;
+    }
+  }
+
+  .streamFunctionModify-def {
+    display: flex;
+    flex-direction: column;
+
+    .streamFunctionModify-editor {
+      margin-bottom: 20px;
+    }
+  }
+
+  .streamFunctionModify-topicPickers {
+    display: flex;
+    justify-content: space-between;
+
+    .streamFunctionModify-topicPicker {
+      flex-grow: 1;
+      margin: 0 30px;
+    }
+  }
+
+  .pt-input.st-input-minimal {
+    box-shadow: none;
+    background: none;
+    border-bottom: 1px solid $st-white-25;
+
+    &:focus {
+      border-bottom-color: $st-blue;
+    }
+  }
+  
+}

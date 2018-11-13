@@ -1,0 +1,14 @@
+.pt-input-group {
+  .pt-icon {
+    margin: 0 6px 0 9px;
+    font-size: $pt-font-size;
+  }
+}
+
+.pt-dark {
+  .pt-input-group {
+    .pt-icon {
+      color: rgba($st-white, 0.5);
+    }
+  }
+}

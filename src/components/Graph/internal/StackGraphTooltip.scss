@@ -1,0 +1,60 @@
+.graph-tooltip.stack {
+  background-color: $st-tooltip-bg-color;
+  color: $st-tooltip-color;
+  border-radius: $st-tooltip-border-radius;
+
+  flex-direction: column;
+  height: 100%;
+  max-width: 50%;
+  min-width: 25%;
+  z-index: 1;
+
+  [class*='stack-tooltip-item-'] {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    border-bottom: 1px solid $st-gray-bright;
+
+    > div {
+      padding: 0 $st-panel-gutter / 4;
+    }
+
+    .metric-health {
+      background-color: transparent;
+      justify-content: center;
+      flex: 1;
+      display: flex;
+      padding: 0;
+      padding-left: $st-panel-gutter;
+
+      // reset all
+      border-radius: 0;
+      height: auto;
+      width: auto;
+      align-self: auto;
+      margin-left: 0;
+      margin-right: 0;
+
+      .stripe {
+        @include st-line-color(background-color);
+        width: $pt-grid-size;
+        height: 3px;
+        display: block;
+      }
+    }
+
+    .metric-name {
+      flex: 4;
+      padding: 0;
+    }
+
+    .metric-value {
+      background-color: transparent;
+      color: rgba($st-tooltip-color, 0.75);
+      font-weight: $st-font-weight-regular;
+      text-align: right;
+      flex: 1;
+      padding-right: $st-panel-gutter;
+    }
+  }
+}

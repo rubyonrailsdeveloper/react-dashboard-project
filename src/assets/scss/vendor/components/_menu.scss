@@ -1,0 +1,205 @@
+.pt-menu {
+  .pt-menu-item {
+    &::before,
+    &::after {
+      font-size: $pt-font-size;
+      line-height: $pt-icon-size-standard;
+    }
+    &:not([class*='pt-intent-']) {
+      &::before,
+      &::after {
+        color: $st-plum;
+      }
+      &:hover {
+        background-color: rgba($st-plum, 0.15);
+      }
+      &:active {
+        background-color: rgba($st-plum, 0.25);
+      }
+      &.pt-active {
+        background-color: $st-teal;
+        color: $st-white;
+      }
+      &.no-hover {
+        cursor: auto;
+      }
+      &.no-hover:hover,
+      &.no-hover:active {
+        background-color: transparent;
+      }
+    }
+    &.pt-intent-primary {
+      color: $st-intent-primary;
+      &::before,
+      &::after,
+      .pt-menu-item-label {
+        color: $st-intent-primary;
+      }
+      &:hover {
+        background-color: $st-teal-dark;
+        color: $st-white;
+        &::before,
+        &::after,
+        .pt-menu-item-label {
+          color: $st-white;
+        }
+      }
+    }
+    &.pt-intent-success {
+      color: $st-green;
+      &::before,
+      &::after,
+      .pt-menu-item-label {
+        color: $st-green;
+      }
+      &:hover {
+        background-color: $st-green-dark;
+        color: $st-white;
+        &::before,
+        &::after,
+        .pt-menu-item-label {
+          color: $st-white;
+        }
+      }
+    }
+    &.pt-intent-warning {
+      color: $st-yellow;
+      &::before,
+      &::after,
+      .pt-menu-item-label {
+        color: $st-yellow;
+      }
+      &:hover {
+        background-color: $st-yellow-dark;
+        color: $st-white;
+        &::before,
+        &::after,
+        .pt-menu-item-label {
+          color: $st-white;
+        }
+      }
+    }
+    &.pt-intent-danger {
+      color: $st-red;
+      &::before,
+      &::after,
+      .pt-menu-item-label {
+        color: $st-red;
+      }
+      &:hover {
+        background-color: $st-red;
+        color: $st-white;
+        &::before,
+        &::after,
+        .pt-menu-item-label {
+          color: $st-white;
+        }
+      }
+    }
+  }
+}
+
+.pt-dark {
+  .pt-menu {
+    background-color: $st-plum-bright;
+    color: $st-white;
+
+    .pt-menu-item {
+      &::before,
+      &::after {
+        color: $st-white;
+      }
+      &:not([class*='pt-intent-']) {
+        &::before,
+        &::after {
+          color: rgba($st-white, 0.5);
+        }
+        &:hover {
+          background-color: rgba($st-white, 0.15);
+        }
+        &:active {
+          background-color: rgba($st-white, 0.1);
+        }
+        &.pt-active {
+          background-color: $st-teal;
+          color: $st-white;
+        }
+        &.no-hover {
+          cursor: auto;
+        }
+        &.no-hover:hover,
+        &.no-hover:active {
+          background-color: transparent;
+        }
+      }
+      &.pt-intent-primary {
+        color: $st-intent-primary;
+        &::before,
+        &::after,
+        .pt-menu-item-label {
+          color: $st-intent-primary;
+        }
+        &:hover {
+          background-color: $st-teal-dark;
+          color: $st-white;
+          &::before,
+          &::after,
+          .pt-menu-item-label {
+            color: $st-white;
+          }
+        }
+      }
+      &.pt-intent-success {
+        color: $st-green;
+        &::before,
+        &::after,
+        .pt-menu-item-label {
+          color: $st-green;
+        }
+        &:hover {
+          background-color: $st-green-dark;
+          color: $st-white;
+          &::before,
+          &::after,
+          .pt-menu-item-label {
+            color: $st-white;
+          }
+        }
+      }
+      &.pt-intent-warning {
+        color: $st-yellow;
+        &::before,
+        &::after,
+        .pt-menu-item-label {
+          color: $st-yellow;
+        }
+        &:hover {
+          background-color: $st-yellow-dark;
+          color: $st-white;
+          &::before,
+          &::after,
+          .pt-menu-item-label {
+            color: $st-white;
+          }
+        }
+      }
+      &.pt-intent-danger {
+        color: $st-red;
+        &::before,
+        &::after,
+        .pt-menu-item-label {
+          color: $st-red;
+        }
+        &:hover {
+          background-color: $st-red;
+          color: $st-white;
+          &::before,
+          &::after,
+          .pt-menu-item-label {
+            color: $st-white;
+          }
+        }
+      }
+    }
+  }
+}

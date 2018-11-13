@@ -1,0 +1,29 @@
+.st-metric-gauge {
+  &-sub {
+    text-align: center;
+  }
+}
+
+.st-gauge-success {
+  .c3-chart-arc .c3-gauge-value {
+    fill: $pt-intent-success;
+  }
+}
+
+.st-gauge-warning {
+  .c3-chart-arc .c3-gauge-value {
+    fill: $pt-intent-warning;
+    &:after {
+      content: 'sad'
+    }
+  }
+}
+
+.st-gauge-danger {
+  .c3-chart-arc .c3-gauge-value {
+    fill: $pt-intent-danger;
+    &:after {
+      content: 'sad'
+    }
+  }
+}
