@@ -30,7 +30,7 @@
     "bourbon": "^4.3.4",
     "c3": "^0.4.21",
     "classnames": "^2.2.5",
-    "codemirror": "^5.35.0",
+    "codemirror": "^5.58.2",
     "core-js": "^2.5.3",
     "d3-array": "^1.2.1",
     "d3-scale": "^1.0.7",
